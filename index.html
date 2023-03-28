@@ -1,33 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>Library</title>
 
-    <link rel="stylesheet" href="styles.css">
-    <script src="app.js"></script>
-</head>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="app.js" defer></script>
+  </head>
 
-<body class="flex-center">
+  <body class="flex-center">
     <div class="main flex-center">
-        <h1>Library</h1>
-        <div class="actions flex-center">
-            <button>Add Book</button>
-            <button>Display Books</button>
+      <h1>Library</h1>
+      <div class="actions flex-center">
+        <button>Add Book</button>
+        <button class="show">Display Books</button>
+      </div>
+      <div class="display">
+        <div class="book flex-center">
+          <h3>Book</h3>
+          <p>author</p>
+          <p>pages</p>
+          <p>read</p>
         </div>
-        <div class="display">
-            <div class="book"></div>
-            <div class="book"></div>
-            <div class="book"></div>
-            <div class="book"></div>
-            <div class="book"></div>
-            <div class="book"></div>
-            <div class="book"></div>
-            <div class="book"></div>
-            <div class="book"></div>
-        </div>
+        <div class="book"></div>
+        <div class="book"></div>
+        <div class="book"></div>
+        <div class="book"></div>
+        <div class="book"></div>
+        <div class="book"></div>
+        <div class="book"></div>
+        <div class="book"></div>
+      </div>
     </div>
-</body>
+  </body>
 </html>
