@@ -49,6 +49,10 @@ showButton.addEventListener('click', () => {
         let author = document.createElement('p')
         let pages = document.createElement('p')
         let read = document.createElement('p')
+
+        author.classList.add('author');
+        pages.classList.add('pages');
+        read.classList.add('read');
         
         author.textContent = book.author;
         pages.textContent = book.pages;
