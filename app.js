@@ -20,20 +20,11 @@ function addBookToLibrary(title, author, pages, read) {
     library.push(new BookConstructor(title, author, pages, read));
 }
 
-function displayLibrary() {
-    for (let book of library) {
-        console.log(book.info())
-    }
-}
-
 addBookToLibrary('Harry Potter', 'J.K. Rowling', 576, 'not read');
 addBookToLibrary('Tributes of Panem', 'Susanne Collins', 532, 'not read');
 addBookToLibrary('Atomic Habbits', 'James Clear', 352, 'read');
 
-displayLibrary();
-
-showButton.addEventListener('click', () => {
-
+function displayLibrary() {
     library.forEach(book => {
         // Create new div.book as a container for the book
         let newElement = document.createElement('div');
@@ -61,6 +52,11 @@ showButton.addEventListener('click', () => {
         newElement.appendChild(author)
         newElement.appendChild(pages)
         newElement.appendChild(read)
-    })
-    
-})
+
+        bookDisplay.style.backgroundColor = "#555";
+    });
+}
+
+showButton.addEventListener('click', () => {
+    displayLibrary();
+}, {once: true});
