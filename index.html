@@ -1,24 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Library</title>
+        <title>Library</title>
 
-    <link rel="stylesheet" href="styles.css" />
-    <script src="app.js" defer></script>
-  </head>
+        <link rel="stylesheet" href="styles.css" />
+        <script src="app.js" defer></script>
+    </head>
 
-  <body class="flex-center">
-    <div class="main flex-center">
-      <h1>Library</h1>
-      <div class="actions flex-center">
-        <button>Add Book</button>
-        <button class="show">Display Books</button>
-      </div>
-      <div class="display">
-      </div>
-    </div>
-  </body>
+    <body>
+        <div class="background flex-center">
+            <div class="main flex-center">
+                <h1>Library</h1>
+                <div class="actions flex-center">
+                    <button class="add">Add Book</button>
+                    <button class="show">Display Books</button>
+                </div>
+
+                <div class="display"></div>
+            </div>
+        </div>
+        <div class="hidden visible">
+            <form action="post">
+                <div>
+                    <label for="title">Title:</label>
+                    <input type="text" id="title" />
+                </div>
+                <div>
+                    <label for="author">Author:</label>
+                    <input type="text" id="author" />
+                </div>
+                <div>
+                    <label for="pages">Pages:</label>
+                    <input type="text" id="pages" />
+                </div>
+                <div>
+                    <label for="read">Read:</label>
+                    <input type="text" id="read" />
+                </div>
+            </form>
+        </div>
+        <div class="overlay"></div>
+    </body>
 </html>

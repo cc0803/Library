@@ -5,6 +5,14 @@ body {
     height: 100vh;
     margin: 0;
     padding: 0;
+    position: relative;
+}
+
+.background {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
     background: url(https://w0.peakpx.com/wallpaper/107/369/HD-wallpaper-room-book-library-bookshelf.jpg);
     background-repeat: no-repeat;
     background-size: cover;
@@ -112,4 +120,47 @@ h3 {
 
 p {
     margin: 0.5rem;
+}
+
+/*.hidden {
+    position: absolute;
+    width: 0;
+    height: 0;
+    top: 0;
+    left: 0;
+}
+*/
+
+.visible {
+    position: absolute;
+    width: clamp(200px, 30%, 600px);
+    height: clamp(300px, 35vw, 800px);
+    background-color: white;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 2vw;
+    border: 0.4vw solid black;
+    background-color: white;
+    z-index: 10;    
+}
+
+label {
+    font-size: calc(10px + 0.7vw);
+    font-weight: 400;
+    font-family: 'Roboto Mono', monospace;
+}
+
+form {
+    margin: 2vw;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 5;
 }
