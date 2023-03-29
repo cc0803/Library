@@ -23,29 +23,29 @@
             </div>
         </div>
         <div class="form">
-            <form action="post">
+            <form>
                 <div>
                     <label for="title">Title:</label>
-                    <input type="text" id="title" />
+                    <input type="text" id="title" required/>
                 </div>
                 <div>
                     <label for="author">Author:</label>
-                    <input type="text" id="author" />
+                    <input type="text" id="author" required/>
                 </div>
                 <div>
                     <label for="pages">Pages:</label>
-                    <input type="text" id="pages" />
+                    <input type="text" id="pages" required/>
                 </div>
                 <fieldset>
                     <legend>Read the book?</legend>
                     <div class="select">
                         <div>
                             <label for="yes">YES</label>
-                            <input type="radio" id="yes" name="read" />
+                            <input type="radio" id="yes" name="read" checked/>
                         </div>
                         <div>
                             <label for="no">NO</label>
-                            <input type="radio" id="no" name="read" />
+                            <input type="radio" id="no" name="read"/>
                         </div>
                     </div>
                 </fieldset>
