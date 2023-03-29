@@ -4,6 +4,8 @@ let library = [];
 const showButton = document.querySelector(".show");
 const bookDisplay = document.querySelector(".display");
 const addButton = document.querySelector(".add");
+const formDiv = document.querySelector(".form");
+const overlay = document.querySelector(".overlay");
 
 function BookConstructor(title, author, pages, read) {
     (this.title = title),
@@ -64,3 +66,13 @@ showButton.addEventListener(
     },
     { once: true }
 );
+
+addButton.addEventListener("click", () => {
+    formDiv.classList.add("visible");
+    overlay.classList.add("active");
+});
+
+overlay.addEventListener("click", () => {
+    formDiv.classList.remove("visible");
+    overlay.classList.remove("active");
+});

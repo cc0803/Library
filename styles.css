@@ -1,4 +1,4 @@
-  @import url('https://fonts.googleapis.com/css2?family=Fasthand&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Fasthand&display=swap");
 
 body {
     width: 100vw;
@@ -17,7 +17,7 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     overflow: hidden;
-    font-family: 'Fasthand', cursive, serif;
+    font-family: "Fasthand", cursive, serif;
 }
 
 .flex-center {
@@ -47,7 +47,7 @@ body {
 }
 
 h1 {
-    font-family: 'Fasthand', cursive, serif;
+    font-family: "Fasthand", cursive, serif;
     font-size: 3rem;
     margin: 2rem;
     padding: 0;
@@ -60,11 +60,11 @@ button {
     background-color: #555;
     border-radius: 1.2rem;
     color: wheat;
-    font-family: 'Fasthand', cursive, serif;
+    font-family: "Fasthand", cursive, serif;
     font-size: calc(6px + 1vw);
     line-height: calc(6px + 1vw);
     box-shadow: 0.15rem 0.15rem 0.3rem #555;
-    transition: all .1s ease-in-out;
+    transition: all 0.1s ease-in-out;
 }
 
 .actions.flex-center {
@@ -78,7 +78,7 @@ button:hover {
 
 button:active {
     background-color: #777;
-    transform: scale(1.025)
+    transform: scale(1.025);
 }
 
 .display {
@@ -98,15 +98,15 @@ button:active {
 }
 
 .author::before {
-    content: 'Author: ';    
+    content: "Author: ";
 }
 
 .pages::before {
-    content: 'Pages: '
+    content: "Pages: ";
 }
 
 .read::before {
-    content: 'Read: '
+    content: "Read: ";
 }
 
 h3 {
@@ -138,13 +138,13 @@ p {
     border-radius: 2vw;
     border: 0.4vw solid black;
     background-color: white;
-    z-index: 10;    
+    z-index: 10;
 }
 
 label {
     font-size: calc(10px + 0.7vw);
     font-weight: 400;
-    font-family: 'Roboto Mono', monospace;
+    font-family: "Roboto Mono", monospace;
 }
 
 form {
@@ -161,7 +161,6 @@ form {
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 5;
     pointer-events: none;
-    transform: scale(0);
     opacity: 0;
 }
 
@@ -177,11 +176,11 @@ input {
     border: 2px solid black;
     border-radius: 0.5vw;
     height: 2vw;
-    font-family: 'Roboto Mono', monospace;
+    font-family: "Roboto Mono", monospace;
     font-size: 1.2vw;
 }
 
-form>div {
+form > div {
     display: flex;
     flex-direction: column;
     width: 80%;
@@ -200,23 +199,23 @@ form {
     justify-content: space-between;
 }
 
-.select>div>input {
+.select > div > input {
     width: 1.5vw;
     height: 1.5vw;
 }
 
 legend {
-    font-family: 'Roboto Mono', monospace ;
+    font-family: "Roboto Mono", monospace;
     font-size: calc(10px + 0.7vw);
 }
 
-form>button {
+form > button {
     margin: 1rem;
     text-align: center;
     width: max(60px, 8vw);
-    height: max(25px, 3vw); 
-    font-family: 'Roboto Mono', monospace;
+    height: max(25px, 3vw);
+    font-family: "Roboto Mono", monospace;
     color: white;
-    border-radius: 0.4vw;   
+    border-radius: 0.4vw;
     font-size: max(12px, 1vw);
 }
