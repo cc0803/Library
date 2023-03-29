@@ -149,6 +149,7 @@ label {
 
 form {
     margin: 2vw;
+    height: 80%;
 }
 
 .overlay {
@@ -176,6 +177,8 @@ input {
     border: 2px solid black;
     border-radius: 0.5vw;
     height: 2vw;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 1.2vw;
 }
 
 form>div {
@@ -186,6 +189,7 @@ form>div {
 }
 
 form {
+    height: 90%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -204,4 +208,15 @@ form {
 legend {
     font-family: 'Roboto Mono', monospace ;
     font-size: calc(10px + 0.7vw);
+}
+
+form>button {
+    margin: 1rem;
+    text-align: center;
+    width: max(60px, 8vw);
+    height: max(25px, 3vw); 
+    font-family: 'Roboto Mono', monospace;
+    color: white;
+    border-radius: 0.4vw;   
+    font-size: max(12px, 1vw);
 }
