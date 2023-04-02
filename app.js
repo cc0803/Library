@@ -45,6 +45,10 @@ function resetForm() {
 
 
 function displayLibrary() {
+    while (bookDisplay.firstChild) {
+        bookDisplay.removeChild(bookDisplay.lastChild);
+    }
+
     library.forEach((book) => {
         // Create new div.book as a container for the book
         let newElement = document.createElement("div");
@@ -81,8 +85,7 @@ showButton.addEventListener(
     "click",
     () => {
         displayLibrary();
-    },
-    { once: true }
+    }
 );
 
 addButton.addEventListener("click", () => {
@@ -95,6 +98,7 @@ submitButton.addEventListener("click", () => {
     submitButtonAction();
     event.preventDefault();
     resetForm();
+    displayLibrary();
 });
 
 overlay.addEventListener("click", () => {
