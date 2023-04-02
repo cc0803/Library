@@ -92,7 +92,7 @@ button:active {
 .book {
     background-color: #eae5cd;
     border-radius: 1vw;
-    height: 200px;
+    height: 300px;
     margin: 1rem;
     color: #27221f;
 }
@@ -218,4 +218,22 @@ form > button {
     color: white;
     border-radius: 0.4vw;
     font-size: max(12px, 1vw);
+}
+
+.remove {
+    align-self: flex-start;
+    font-family: 'Roboto Mono', monospace;
+    font-size: calc(10px + 0.2vw);
+    width: calc(50px + 1.5vw);
+    height: calc(20px + 1vw);
+    margin-left: 1vw;
+    background-color: red;
+    color: black;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.remove:active {
+    transform: scale(1.025);
+    background-color: rgba(255, 0, 0, 0.8);
 }

@@ -64,11 +64,14 @@ function displayLibrary() {
         let author = document.createElement("p");
         let pages = document.createElement("p");
         let read = document.createElement("p");
+        let remove = document.createElement("button");
 
+        remove.classList.add("remove");
         author.classList.add("author");
         pages.classList.add("pages");
         read.classList.add("read");
 
+        remove.textContent = "remove";
         author.textContent = book.author;
         pages.textContent = book.pages;
         read.textContent = book.read;
@@ -76,6 +79,7 @@ function displayLibrary() {
         newElement.appendChild(author);
         newElement.appendChild(pages);
         newElement.appendChild(read);
+        newElement.appendChild(remove);
 
         bookDisplay.style.backgroundColor = "#555";
     });
@@ -105,3 +109,6 @@ overlay.addEventListener("click", () => {
     formDiv.classList.remove("visible");
     overlay.classList.remove("active");
 });
+
+addBookToLibrary("Atomic Habits", "James Clear", 320, "yes");
+addBookToLibrary("The 4-Hour Workweek", "Tim Ferris", 416, "yes");
