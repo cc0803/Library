@@ -32,6 +32,17 @@ function submitButtonAction() {
     addBookToLibrary(title, author, pages, read);
 }
 
+function resetForm() {
+    // Make the form invisible
+    formDiv.classList.remove("visible");
+    overlay.classList.remove("active");
+
+    document.querySelector("#title").value = "";
+    document.querySelector("#author").value = "";
+    document.querySelector("#pages").value = "";
+    document.querySelector("#yes").checked = true;
+}
+
 
 function displayLibrary() {
     library.forEach((book) => {
@@ -83,8 +94,7 @@ addButton.addEventListener("click", () => {
 submitButton.addEventListener("click", () => {
     submitButtonAction();
     event.preventDefault();
-    formDiv.classList.remove("visible");
-    overlay.classList.remove("active");
+    resetForm();
 });
 
 overlay.addEventListener("click", () => {
