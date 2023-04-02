@@ -1,11 +1,12 @@
-let library = [];
-
 // Select all relevant document elements
 const showButton = document.querySelector(".show");
 const bookDisplay = document.querySelector(".display");
 const addButton = document.querySelector(".add");
 const formDiv = document.querySelector(".form");
 const overlay = document.querySelector(".overlay");
+const submitButton = document.querySelector("[type='submit']");
+
+let library = [];
 
 function BookConstructor(title, author, pages, read) {
     (this.title = title),
@@ -22,9 +23,15 @@ function addBookToLibrary(title, author, pages, read) {
     library.push(new BookConstructor(title, author, pages, read));
 }
 
-addBookToLibrary("Harry Potter", "J.K. Rowling", 576, "not read");
-addBookToLibrary("Tributes of Panem", "Susanne Collins", 532, "not read");
-addBookToLibrary("Atomic Habbits", "James Clear", 352, "read");
+function submitButtonAction() {
+    const title = document.querySelector("#title").value;
+    const author = document.querySelector("#author").value;
+    const pages = document.querySelector("#pages").value;
+    const read = document.querySelector("[name='read']:checked").value;
+
+    addBookToLibrary(title, author, pages, read);
+}
+
 
 function displayLibrary() {
     library.forEach((book) => {
@@ -70,6 +77,14 @@ showButton.addEventListener(
 addButton.addEventListener("click", () => {
     formDiv.classList.add("visible");
     overlay.classList.add("active");
+});
+
+
+submitButton.addEventListener("click", () => {
+    submitButtonAction();
+    event.preventDefault();
+    formDiv.classList.remove("visible");
+    overlay.classList.remove("active");
 });
 
 overlay.addEventListener("click", () => {
