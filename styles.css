@@ -237,3 +237,15 @@ form > button {
     transform: scale(1.025);
     background-color: rgba(255, 0, 0, 0.8);
 }
+
+button[type="submit"]:disabled {
+    background-color: #777;
+}
+
+button[type="submit"]:hover {
+    transform: scale(1);
+}
+
+button[type="submit"]:active {
+    transform: scale(1);
+}
