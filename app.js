@@ -106,6 +106,16 @@ function displayLibrary() {
     });
 }
 
+function checkFormInput() {
+    const requiredElements = Array.from(document.querySelectorAll("input:required"));
+
+    if (requiredElements[0].value != "" && requiredElements[1].value != "" && requiredElements[2].value != "") {
+        return true;
+    } else {
+        return false;
+    }
+}
+
 showButton.addEventListener(
     "click",
     () => {
@@ -119,11 +129,13 @@ addButton.addEventListener("click", () => {
 });
 
 
-submitButton.addEventListener("click", () => {
-    submitButtonAction();
-    event.preventDefault();
-    resetForm();
-    displayLibrary();
+submitButton.addEventListener("click", (e) => {
+    if (checkFormInput()) {
+        submitButtonAction();
+        resetForm();
+        displayLibrary();
+        e.preventDefault();
+    }
 });
 
 overlay.addEventListener("click", () => {
