@@ -36,8 +36,12 @@ function submitButtonAction() {
     dataAttributeCount += 1;
 }
 
-function removeButtonAction() {
-
+function removeButtonAction(index) {
+    for (let i = 0; i < library.length; i++) {
+        if (library[i].index == index) {
+            library.splice(i, 1);
+        }
+    }
 } 
 
 function resetForm() {
@@ -95,7 +99,8 @@ function displayLibrary() {
 
         removeButton.forEach(button => {
             button.addEventListener("click", () => {
-                console.log("HEllo");
+                removeButtonAction(button.getAttribute("data-index"));
+                displayLibrary();
             })
         })
     });
