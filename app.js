@@ -6,7 +6,8 @@ const formDiv = document.querySelector(".form");
 const overlay = document.querySelector(".overlay");
 const submitButton = document.querySelector("[type='submit']");
 
-let removeButton = Array.from(document.querySelectorAll(".remove"));
+let toggleReadButtons = [];
+let removeButton = [];
 let dataAttributeCount = 0;
 let library = [];
 
@@ -44,6 +45,10 @@ function removeButtonAction(index) {
     }
 } 
 
+function toggleReadButtonAction() {
+    
+}
+
 function resetForm() {
     // Make the form invisible
     formDiv.classList.remove("visible");
@@ -75,9 +80,13 @@ function displayLibrary() {
         let author = document.createElement("p");
         let pages = document.createElement("p");
         let read = document.createElement("p");
+        let buttonDiv = document.createElement("div");
         let remove = document.createElement("button");
+        let toggleRead = document.createElement("button");
 
-        remove.classList.add("remove");
+        buttonDiv.classList.add("button-container");
+        remove.classList.add("book-button", "remove");
+        toggleRead.classList.add("book-button");
         author.classList.add("author");
         pages.classList.add("pages");
         read.classList.add("read");
@@ -89,11 +98,16 @@ function displayLibrary() {
 
         remove.setAttribute("data-index", book.index);
         removeButton.push(remove);
+        toggleRead.setAttribute("data-index", book.index);
+        toggleReadButtons.push(toggleRead);
+
+        buttonDiv.appendChild(remove);
+        buttonDiv.appendChild(toggleRead);
 
         newElement.appendChild(author);
         newElement.appendChild(pages);
         newElement.appendChild(read);
-        newElement.appendChild(remove);
+        newElement.appendChild(buttonDiv)
 
         bookDisplay.style.backgroundColor = "#555";
 
