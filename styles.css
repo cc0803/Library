@@ -97,6 +97,11 @@ button:active {
     color: #27221f;
 }
 
+.book>* {
+    height: 20%;
+    margin: 1vw;
+}
+
 .author::before {
     content: "Author: ";
 }
@@ -220,17 +225,21 @@ form > button {
     font-size: max(12px, 1vw);
 }
 
-.remove {
+.book-button {
     align-self: flex-start;
     font-family: 'Roboto Mono', monospace;
     font-size: calc(10px + 0.2vw);
     width: calc(50px + 1.5vw);
     height: calc(20px + 1vw);
-    margin-left: 1vw;
-    background-color: red;
     color: black;
     font-weight: 700;
     letter-spacing: 1px;
+    vertical-align: center;
+}
+
+.remove {
+    background-color: red;
+    margin-left: 1vw;
 }
 
 .remove:active {
@@ -249,3 +258,11 @@ button[type="submit"]:hover {
 button[type="submit"]:active {
     transform: scale(1);
 }
+
+.button-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
