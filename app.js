@@ -45,8 +45,20 @@ function removeButtonAction(index) {
     }
 } 
 
-function toggleReadButtonAction() {
-    
+function toggleReadButtonAction(index) {
+    for (let i = 0; i < library.length; i++) {
+        if (library[i].index == index) {
+            if (library[i].read == "yes") {
+                library[i].read == "no";
+                toggleReadButtons[i].style.backgroundColor = "red";
+                toggleReadButtons[i].textContent = "not read";
+            } else {
+                library[i].read == "yes";
+                toggleReadButtons[i].style.backgroundColor = "green";
+                toggleReadButtons[i].textContent = "read";
+            }
+        }
+    }
 }
 
 function resetForm() {
@@ -110,6 +122,12 @@ function displayLibrary() {
         newElement.appendChild(buttonDiv)
 
         bookDisplay.style.backgroundColor = "#555";
+
+        toggleReadButtons.forEach(button => {
+            button.addEventListener("click", () => {
+                toggleReadButtonAction(button.getAttribute("data-index"))
+            })
+        })
 
         removeButton.forEach(button => {
             button.addEventListener("click", () => {
