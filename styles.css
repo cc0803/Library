@@ -229,7 +229,7 @@ form > button {
     align-self: flex-start;
     font-family: 'Roboto Mono', monospace;
     font-size: calc(10px + 0.2vw);
-    width: calc(50px + 1.5vw);
+    width: calc(75px + 1.8vw);
     height: calc(20px + 1vw);
     color: black;
     font-weight: 700;

@@ -24,7 +24,9 @@ BookConstructor.prototype.info = function () {
 };
 
 function addBookToLibrary(title, author, pages, read, dataAttribute) {
-    library.push(new BookConstructor(title, author, pages, read, dataAttribute));
+    library.push(
+        new BookConstructor(title, author, pages, read, dataAttribute)
+    );
 }
 
 function submitButtonAction() {
@@ -43,21 +45,37 @@ function removeButtonAction(index) {
             library.splice(i, 1);
         }
     }
-} 
+}
 
 function toggleReadButtonAction(index) {
     for (let i = 0; i < library.length; i++) {
         if (library[i].index == index) {
-            if (library[i].read == "yes") {
-                library[i].read == "no";
+            if (library[i].read == "no") {
+                library[i].read = "yes";
                 toggleReadButtons[i].style.backgroundColor = "red";
                 toggleReadButtons[i].textContent = "not read";
+                changeReadStatusOnBookcard(i + 1, "yes")
             } else {
-                library[i].read == "yes";
+                library[i].read = "no";
                 toggleReadButtons[i].style.backgroundColor = "green";
                 toggleReadButtons[i].textContent = "read";
+                changeReadStatusOnBookcard(i + 1, "no");
             }
         }
+    }
+}
+
+function changeReadStatusOnBookcard(index, status) {
+    document.querySelector(`.book:nth-child(${index})>p:last-of-type`).textContent = status;
+}
+
+function setInitialReadButton(status, button) {
+    if (status == "yes") {
+        button.style.backgroundColor = "red";
+        button.textContent = "not read";
+    } else {
+        button.style.backgroundColor = "green";
+        button.textContent = "read"
     }
 }
 
@@ -112,6 +130,7 @@ function displayLibrary() {
         removeButton.push(remove);
         toggleRead.setAttribute("data-index", book.index);
         toggleReadButtons.push(toggleRead);
+        setInitialReadButton(book.read, toggleRead);
 
         buttonDiv.appendChild(remove);
         buttonDiv.appendChild(toggleRead);
@@ -119,47 +138,47 @@ function displayLibrary() {
         newElement.appendChild(author);
         newElement.appendChild(pages);
         newElement.appendChild(read);
-        newElement.appendChild(buttonDiv)
+        newElement.appendChild(buttonDiv);
 
         bookDisplay.style.backgroundColor = "#555";
 
-        toggleReadButtons.forEach(button => {
-            button.addEventListener("click", () => {
-                toggleReadButtonAction(button.getAttribute("data-index"))
-            })
-        })
+        toggleRead.addEventListener("click", () => {
+            toggleReadButtonAction(toggleRead.getAttribute("data-index"));
+        });
 
-        removeButton.forEach(button => {
+        removeButton.forEach((button) => {
             button.addEventListener("click", () => {
                 removeButtonAction(button.getAttribute("data-index"));
                 displayLibrary();
-            })
-        })
+            });
+        });
     });
 }
 
 function checkFormInput() {
-    const requiredElements = Array.from(document.querySelectorAll("input:required"));
+    const requiredElements = Array.from(
+        document.querySelectorAll("input:required")
+    );
 
-    if (requiredElements[0].value != "" && requiredElements[1].value != "" && requiredElements[2].value != "") {
+    if (
+        requiredElements[0].value != "" &&
+        requiredElements[1].value != "" &&
+        requiredElements[2].value != ""
+    ) {
         return true;
     } else {
         return false;
     }
 }
 
-showButton.addEventListener(
-    "click",
-    () => {
-        displayLibrary();
-    }
-);
+showButton.addEventListener("click", () => {
+    displayLibrary();
+});
 
 addButton.addEventListener("click", () => {
     formDiv.classList.add("visible");
     overlay.classList.add("active");
 });
-
 
 submitButton.addEventListener("click", (e) => {
     if (checkFormInput()) {
@@ -174,8 +193,3 @@ overlay.addEventListener("click", () => {
     formDiv.classList.remove("visible");
     overlay.classList.remove("active");
 });
-
-addBookToLibrary("Atomic Habits", "James Clear", 320, "yes", dataAttributeCount);
-dataAttributeCount += 1;
-addBookToLibrary("The 4-Hour Workweek", "Tim Ferris", 416, "yes", dataAttributeCount);
-dataAttributeCount += 1;
