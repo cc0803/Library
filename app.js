@@ -11,21 +11,28 @@ let removeButton = [];
 let dataAttributeCount = 0;
 let library = [];
 
-function BookConstructor(title, author, pages, read, dataAttribute) {
-    (this.title = title),
-        (this.author = author),
-        (this.pages = pages),
-        (this.read = read),
-        (this.index = dataAttribute);
+class Book {
+    constructor(title, author, pages, read, dataAttribute) {
+        this.title = title;
+        this.author = author;
+        this.pages = pages;
+        this.read = read;
+        this.index = dataAttribute;
+    }
 }
 
-BookConstructor.prototype.info = function () {
-    return `${this.title} from ${this.author} has ${this.pages} pages. Have I you read it? ${this.read}`;
-};
+
+// function BookConstructor(title, author, pages, read, dataAttribute) {
+//     (this.title = title),
+//         (this.author = author),
+//         (this.pages = pages),
+//         (this.read = read),
+//         (this.index = dataAttribute);
+// }
 
 function addBookToLibrary(title, author, pages, read, dataAttribute) {
     library.push(
-        new BookConstructor(title, author, pages, read, dataAttribute)
+        new Book(title, author, pages, read, dataAttribute)
     );
 }
 
